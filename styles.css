@@ -54,7 +54,6 @@ table {
 	border-spacing: 0;
 }
 
-
 /* Root Variables */
 :root {
   --blue-bulletin: #1D3557;
@@ -89,7 +88,24 @@ body.dark-mode {
 
 /* ///ADD/// Skip Link Styles */
 
+.skip-link{
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus{
+  position: static;
+  width: auto;
+  height: auto;
+}
+
 /* ///ADD/// Navigation Styles */
+
+
 
 /* ///ADD/// Global Layout Styles */
 
