@@ -490,10 +490,6 @@ input[type="submit"]:hover{
     padding-left: 2.5rem;
   }
 
-  .legend-group{
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   .footer-container .copyright, .footer-container h2{
     margin-top: 2rem;
   }
@@ -501,8 +497,34 @@ input[type="submit"]:hover{
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
 
+@media (prefers-color-scheme: dark){
+  body{
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
+}
+
+@media (prefers-color-scheme: light){
+  body{
+    background-color: var(--watchdog-white);
+    color: var(--truth-text);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .menu a{
+    transition: none;
+  }
+
+  #featured-articles article:hover, #breaking-news article:hover{
+    transform: none;
+  }
+}
+
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
-
+    nav:has(#menu-toggle:checked){
+      display: block;
+    }
 }
