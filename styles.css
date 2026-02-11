@@ -98,6 +98,8 @@ body.dark-mode {
 }
 
 .skip-link:focus{
+  color: var(--watchdog-white);
+  text-decoration: none;
   position: static;
   width: auto;
   height: auto;
@@ -106,6 +108,7 @@ body.dark-mode {
 /* ///ADD/// Navigation Styles */
 
 .mobile-nav{
+  position: relative;
   text-align: center;
   font-family: var(--font-body);
 }
@@ -121,26 +124,26 @@ body.dark-mode {
   font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
-  cursor: pointer;
   font-weight: 500;
   transition: background-color 1s ease;
 }
 
 .menu{
-  min-width: 400px;
   display: none;
   position: absolute;
-  top: 120%;
+  z-index: 10;
+  min-width: 400px;
+  top: 125%;
   left: 50%;
   background-color: var(--blue-bulletin);
-  transform: translate(-50%, 0)
+  transform: translate(-50%, 0);
 }
 
 .menu a{
   display: block;
   background-color: var(--news-flash);
   color: var(--watchdog-white);
-  padding: .8rem;
+  padding: 0.7rem;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
@@ -151,9 +154,15 @@ body.dark-mode {
 .menu a:hover, .menu-button:hover, footer a:hover{
   background-color: var(--blue-bulletin);
   border: 1px solid var(--news-flash);
-  cursor: pointer;
 }
 
+input:checked ~ .menu{
+  display: block;
+  width: 93%;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+}
 
 /* ///ADD/// Global Layout Styles */
 
@@ -400,8 +409,7 @@ input[type="submit"]:hover{
 
 @media screen and (min-width: 620px){
   .menu-button{
-    display: none;
-  }
+    display: none;  }
 
   .mobile-nav{
     text-align: left;
@@ -420,6 +428,10 @@ input[type="submit"]:hover{
     padding-left: 1.20rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  input:checked ~ .menu{
+    box-shadow: none;
   }
 
   .header-container > .tagline{
